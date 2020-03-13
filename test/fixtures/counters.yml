@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2020-01-06 15:51:50
+  expire: 2020-01-06 15:51:50
+  text: MyString
+  user: one
+
+two:
+  start: 2020-01-06 15:51:50
+  expire: 2020-01-06 15:51:50
+  text: MyString
+  user: two

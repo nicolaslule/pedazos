@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+ 
+<h1>LEVEL3 Theme API</h1>
+<% if current_user.present? %>
+  <p><%= current_user.email %></p>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Expire</th>
+      <th>Text</th>
+     
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @counter.each do |counter| %>
+      <tr>
+        <td><%= counter.counter_ends.to_formatted_s(:long) %></td>
+        <td><%= counter.counter_text %></td>
+        <td><%= link_to 'Show', counter %></td>
+        <td><%= link_to 'Edit', edit_counter_path(counter) %></td>
+        <td><%= link_to 'Delete', counter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Counter', new_counter_path, :class => "btn btn-primary" %>
+
+
+

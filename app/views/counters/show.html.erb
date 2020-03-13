@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expire:</strong>
+  <%= @counter.counter_ends.to_formatted_s(:long) %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @counter.counter_text %>
+</p>
+
+
+<%= link_to 'Edit', edit_counter_path(@counter) %> |
+<%= link_to 'Back', counters_path %>

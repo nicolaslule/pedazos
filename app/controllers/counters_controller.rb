@@ -2,8 +2,8 @@ class CountersController < ApplicationController
   #rescue_from ActiveRecord::RecordNotFound, with: :redirect_to_counters
   before_action :set_counter, only: [:show, :edit, :update, :destroy]
   #protect_from_forgery except: :show
-  before_action :authenticate_user!
-  before_action :allowed_user, only: [:show, :edit, :update, :destroy]
+  #before_action :authenticate_user!
+  #before_action :allowed_user, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: [:show]
   
   # GET /counters
@@ -16,6 +16,7 @@ class CountersController < ApplicationController
   # GET /counters/1
   # GET /counters/1.json
   def show
+    
     
   end
 
@@ -90,6 +91,11 @@ class CountersController < ApplicationController
         redirect_to root_path, alert: 'Counter not found.'
       end
     end 
+
+    def js_constructor
+    content = render_to_string(params[:template], layout: false)
+    "document.write(#{content.to_json})"
+    end
 
 
 

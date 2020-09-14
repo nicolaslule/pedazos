@@ -3,7 +3,7 @@ class CountersController < ApplicationController
   before_action :set_counter, only: [:show, :edit, :update, :destroy]
   #protect_from_forgery except: :show
   #before_action :authenticate_user!
-  before_action :allowed_user, only: [:show, :edit, :update, :destroy]
+  #before_action :allowed_user, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: [:show]
   
   # GET /counters

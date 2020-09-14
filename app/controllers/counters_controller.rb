@@ -9,8 +9,8 @@ class CountersController < ApplicationController
   # GET /counters
   # GET /counters.json
   def index
-    #@counter = current_user.counters
-    @counter = Counter.all
+    @counter = current_user.counters
+    #@counter = Counter.all
   end
 
   # GET /counters/1
